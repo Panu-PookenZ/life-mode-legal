@@ -15,10 +15,11 @@
 <p><strong>life-mode</strong> is a small personal tool written and used by one person — Panu Wiwattanapa — to organise their own day (a morning plan, an evening wrap-up, and a weekly review) and their own personal inbox.</p>
 
 <h2>What it does with Google data</h2>
-<p>With the owner's own permission, the tool works only with the owner's own Gmail account (<code>pookenz@gmail.com</code>):</p>
+<p>With the owner's own permission, the tool works only with the owner's own Google accounts — the personal Gmail account (<code>pookenz@gmail.com</code>) and the owner's own work account:</p>
 <ul>
-  <li><strong>Read-only daily summary</strong> (<code>https://www.googleapis.com/auth/gmail.readonly</code>): how many messages are unread and which important messages arrived (sender and subject line only).</li>
-  <li><strong>Mailbox assistant</strong> (<code>https://www.googleapis.com/auth/gmail.modify</code>, optionally <code>https://www.googleapis.com/auth/gmail.settings.basic</code>): on the owner's instruction, read and organise mail (labels, archive, Trash), draft replies, send messages the owner has approved one by one, and create simple filters. It cannot permanently delete mail or set up forwarding.</li>
+  <li><strong>Read-only daily summary</strong> (<code>https://www.googleapis.com/auth/gmail.readonly</code>, personal account): how many messages are unread and which important messages arrived (sender and subject line only).</li>
+  <li><strong>Mailbox assistant</strong> (<code>https://www.googleapis.com/auth/gmail.modify</code>, optionally <code>https://www.googleapis.com/auth/gmail.settings.basic</code>; personal and work account): on the owner's instruction, read and organise mail (labels, archive, Trash), draft replies, send messages the owner has approved one by one, and create simple filters. It cannot permanently delete mail or set up forwarding.</li>
+  <li><strong>Work calendar</strong> (<code>https://www.googleapis.com/auth/calendar.events</code>, work account only): on the owner's instruction, list events, create events the owner approves (including invitations to people the owner names) and move events the owner organises. It cannot delete events or answer invitations.</li>
 </ul>
 
 <h2>Who can use it</h2>

@@ -17,16 +17,17 @@
 <p>life-mode is a personal, single-user tool operated by Panu Wiwattanapa (the "owner") for the owner's own use. It is not a public service and has no other users.</p>
 
 <h2>Google user data the tool accesses</h2>
-<p>The tool works only with the owner's own Gmail account (<code>pookenz@gmail.com</code>), and only after the owner grants access. It uses two separate grants:</p>
+<p>The tool works only with the owner's own Google accounts — the owner's personal Gmail account (<code>pookenz@gmail.com</code>) and the owner's own work account — and only after the owner grants access to each one. It uses these separate grants:</p>
 <ol>
-  <li><strong>Morning summary — read-only</strong> (<code>gmail.readonly</code>): the number of unread inbox messages from the last day, and the sender and subject line of up to five unread messages that Gmail marks as important.</li>
-  <li><strong>Mailbox assistant</strong> (<code>gmail.modify</code>, and optionally <code>gmail.settings.basic</code>): on the owner's instruction, the owner's personal assistant software can read messages (headers, text and attachment names), apply or remove labels, archive, mark as read, move messages to Trash (and restore them), create drafts, send drafts the owner has approved, and create simple Gmail filters that label, archive or mark mail as read.</li>
+  <li><strong>Morning summary — read-only</strong> (<code>gmail.readonly</code>, personal account): the number of unread inbox messages from the last day, and the sender and subject line of up to five unread messages that Gmail marks as important.</li>
+  <li><strong>Mailbox assistant</strong> (<code>gmail.modify</code>, and optionally <code>gmail.settings.basic</code>; personal and work account): on the owner's instruction, the owner's personal assistant software can read messages (headers, text and attachment names), apply or remove labels, archive, mark as read, move messages to Trash (and restore them), create drafts, send drafts the owner has approved, and create simple Gmail filters that label, archive or mark mail as read.</li>
+  <li><strong>Work calendar</strong> (<code>calendar.events</code>, work account only): on the owner's instruction, list events, create events (including inviting the people the owner names) and move events the owner organises. It has no command to delete events or to accept or decline invitations.</li>
 </ol>
 <p>Safeguards built into the tool:</p>
 <ul>
   <li>It cannot permanently delete mail — it does not request the scope that allows that, so "delete" always means moving to Trash, which Gmail keeps for 30 days.</li>
   <li>It cannot set up automatic forwarding to any address.</li>
-  <li>Every message it sends is shown to the owner first (recipients, subject, full text and attachments) and is sent only after the owner approves that exact version.</li>
+  <li>Every message it sends is shown to the owner first (recipients, subject, full text and attachments) and is sent only after the owner approves that exact version. Every calendar event it creates or moves is likewise approved by the owner first.</li>
   <li>Actions on many messages at once are proposed as a plan and run only after the owner approves; every action is logged and can be undone.</li>
 </ul>
 
