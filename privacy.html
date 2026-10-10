@@ -12,25 +12,31 @@
 </head>
 <body>
 <h1>Privacy Policy — life-mode</h1>
-<p><em>Last updated: 10 October 2026</em></p>
+<p><em>Last updated: 10 October 2026 (added mailbox organising and sending)</em></p>
 
-<p>life-mode is a personal, single-user tool operated by Panu Wiwattanapa (the "owner") for his own use. It is not a public service and has no other users.</p>
+<p>life-mode is a personal, single-user tool operated by Panu Wiwattanapa (the "owner") for the owner's own use. It is not a public service and has no other users.</p>
 
 <h2>Google user data the tool accesses</h2>
-<p>When the owner grants access, the tool uses the Gmail API with the read-only scope <code>gmail.readonly</code> on the owner's own account (<code>pookenz@gmail.com</code>). It reads:</p>
+<p>The tool works only with the owner's own Gmail account (<code>pookenz@gmail.com</code>), and only after the owner grants access. It uses two separate grants:</p>
+<ol>
+  <li><strong>Morning summary — read-only</strong> (<code>gmail.readonly</code>): the number of unread inbox messages from the last day, and the sender and subject line of up to five unread messages that Gmail marks as important.</li>
+  <li><strong>Mailbox assistant</strong> (<code>gmail.modify</code>, and optionally <code>gmail.settings.basic</code>): on the owner's instruction, the owner's personal assistant software can read messages (headers, text and attachment names), apply or remove labels, archive, mark as read, move messages to Trash (and restore them), create drafts, send drafts the owner has approved, and create simple Gmail filters that label, archive or mark mail as read.</li>
+</ol>
+<p>Safeguards built into the tool:</p>
 <ul>
-  <li>the number of unread messages in the inbox from the last day, and</li>
-  <li>the sender and subject line of up to five unread messages that Gmail marks as important.</li>
+  <li>It cannot permanently delete mail — it does not request the scope that allows that, so "delete" always means moving to Trash, which Gmail keeps for 30 days.</li>
+  <li>It cannot set up automatic forwarding to any address.</li>
+  <li>Every message it sends is shown to the owner first (recipients, subject, full text and attachments) and is sent only after the owner approves that exact version.</li>
+  <li>Actions on many messages at once are proposed as a plan and run only after the owner approves; every action is logged and can be undone.</li>
 </ul>
-<p>It does not read message bodies or attachments, and it cannot send, delete, label or change any message.</p>
 
 <h2>How the data is used</h2>
-<p>This information is used only to build the owner's own private morning summary. To write that summary, the sender and subject lines may be passed to an AI language-model service chosen by the owner (for example Google Gemini). Those services process the text under their own terms; the owner does not use this data to train or improve any AI model.</p>
+<p>The data is used only to help the owner read, organise and answer the owner's own email, and to build the owner's private daily summary. To do this, message headers and text may be passed to AI language-model services chosen by the owner (for example OpenAI or Google Gemini). Those services process the text under their own terms; the owner does not use this data to train or improve any AI model. Content inside emails is treated as information, never as instructions to the tool.</p>
 
 <h2>Storage and sharing</h2>
 <ul>
   <li>The OAuth refresh token is stored in a file readable only by the owner on the owner's own computer.</li>
-  <li>Message content is not copied into any database. A generated summary may be saved in the owner's private notes.</li>
+  <li>Message content is not copied into any database. The tool keeps a local log of its actions (message IDs and labels, not message content); a generated summary and copies of draft replies may be saved in the owner's private notes.</li>
   <li>The data is not sold, not used for advertising, and not shared with any other person.</li>
 </ul>
 
